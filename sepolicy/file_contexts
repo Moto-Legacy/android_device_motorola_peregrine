@@ -1,2 +1,3 @@
 # Stock partition table: the cache partition is /metadata
 /dev/block/bootdevice/by-name/cache             u:object_r:metadata_block_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/cache   u:object_r:metadata_block_device:s0
