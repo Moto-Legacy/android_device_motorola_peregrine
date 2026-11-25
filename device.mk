@@ -29,6 +29,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.target.rc
 
+# Dynamic partitions: first stage init mounts system, vendor and metadata
+# from super, with the ramdisk fstab (this copy wins over msm8226-common's)
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+
 # Sensors
 PRODUCT_PACKAGES += \
     akmd8963
